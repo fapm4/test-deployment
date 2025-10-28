@@ -204,7 +204,7 @@ def main():
                 st.markdown(f"**Brand:** {p1_data['brand']}")
                 st.markdown(f"**Category:** {p1_data['category']}")
                 st.markdown(f"**Price:** ${p1_data['price']}")
-                st.markdown(f"**Rating:** {'⭐' * int(p1_data['rating'])} ({p1_data['rating']})")
+                st.markdown(f"**Rating:** {p1_data['rating']:.1f} ⭐")
                 st.markdown(f"**Screen Size:** {p1_data['screen_size']}")
                 st.markdown(f"**Storage:** {p1_data['storage']}")
                 st.markdown(f"**RAM:** {p1_data['ram']}")
@@ -226,11 +226,11 @@ def main():
                 
                 # Highlight rating difference
                 if p2_data['rating'] > p1_data['rating']:
-                    st.markdown(f"**Rating:** {'⭐' * int(p2_data['rating'])} ({p2_data['rating']}) :green[✓ Higher]")
+                    st.markdown(f"**Rating:** {p2_data['rating']:.1f} ⭐ :green[✓ Higher]")
                 elif p2_data['rating'] < p1_data['rating']:
-                    st.markdown(f"**Rating:** {'⭐' * int(p2_data['rating'])} ({p2_data['rating']}) :red[Lower]")
+                    st.markdown(f"**Rating:** {p2_data['rating']:.1f} ⭐ :red[Lower]")
                 else:
-                    st.markdown(f"**Rating:** {'⭐' * int(p2_data['rating'])} ({p2_data['rating']})")
+                    st.markdown(f"**Rating:** {p2_data['rating']:.1f} ⭐")
                 
                 st.markdown(f"**Screen Size:** {p2_data['screen_size']}")
                 st.markdown(f"**Storage:** {p2_data['storage']}")
