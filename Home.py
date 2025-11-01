@@ -2,7 +2,7 @@ import streamlit as st
 from utils.image import read_image
 from src.styles.index import render_css
 
-TITLE = "FindTech"
+TITLE = "Pickly"
 st.set_page_config(
 	page_title=TITLE,
 	page_icon="🔍",
@@ -17,50 +17,63 @@ def app():
 	img_path = 'src/assets/image.png'
 	img_b64 = read_image(img_path)
 
-	with st.container():
-		st.markdown(f"""
-		<div class='Header'>
-			<img class='Header-logo' src='{img_b64}' alt='BuscaTech logo'/>
-			<div class='Header-info'>
-				<h1 class='Header-title'>{TITLE}</h1>
-				<p class='Header-subtitle'>Compara productos tecnológicos y encuentra las mejores ofertas en un solo lugar.</p>
-			</div>
+	st.markdown(f"""
+	<header class='Header'>
+		<img class='Header-logo' src='{img_b64}' alt='{TITLE} logo'/>
+		<div class='Header-info'>
+			<h4 class='Header-subtitle'><em>Compara productos tecnológicos y encuentra las mejores ofertas en un solo lugar</em></h4>
 		</div>
-		""", unsafe_allow_html=True)
+	</header>
+	""", unsafe_allow_html=True)
 
 	# --- DESCRIPTION ---
-	with st.container():
-		st.markdown("""
-			<div class="Description">
-				<h3>Sobre el proyecto</h3>
-				<p><strong>BuscaTech</strong> es una plataforma en desarrollo que busca transformar la forma en la que las personas comparan productos tecnológicos.</p>
-				<p>Su objetivo es ofrecer un comparador inteligente, claro y personalizado, que permita encontrar el dispositivo más adecuado según las necesidades reales del usuario.</p>
-				<p>A diferencia de los comparadores tradicionales, BuscaTech no se limita a mostrar precios o especificaciones técnicas, sino que interpreta las preferencias del usuario para ofrecer recomendaciones útiles y comprensibles.</p>
-				<p>La plataforma combina información técnica, valoraciones de usuarios y comparativas entre marcas para facilitar la toma de decisiones.</p>
-				<p>En esta primera fase, el proyecto se centrará en <strong>smartphones</strong> y <strong>auriculares</strong>, con un sistema de búsqueda guiada que filtra los productos según características clave como rango de precios o tamaño de pantalla.</p>
-				<p>El objetivo principal es <strong>validar el interés del público</strong> y recopilar feedback para la siguiente etapa de desarrollo.</p>
-				<p>BuscaTech pretende evolucionar hacia un modelo mixto de monetización basado en enlaces de afiliado y, a largo plazo, ofrecer funciones premium y una API para integrarse en otras plataformas tecnológicas.</p>
-			</div>
-		""", unsafe_allow_html=True)
+	
+	st.markdown(f"""
+	<section class="Description">
+		<div class="Description-grid">
+			<article class="Card">
+				<h2>¿Qué es {TITLE}?</h2>
+				<ul class="BulletList">
+					<li><strong>{TITLE}</strong> es una nueva plataforma diseñada para ayudarte a comparar productos tecnológicos de forma más inteligente y humana.</li>
+					<li>No queremos ser otro comparador de precios: queremos entender tus <strong>necesidades reales</strong> y ofrecerte recomendaciones personalizadas que te hagan sentir seguro al elegir.</li>
+					<li>El objetivo es ofrecer una <strong>experiencia simple, útil y visual</strong> para todos los usuarios, sin necesidad de entender especificaciones técnicas complicadas.</li>
+				</ul>
+			</article>
+			<article class="Card">
+				<h2>En qué estamos trabajando</h2>
+				<ul class="BulletList">
+					<li>Estamos desarrollando un sistema de búsqueda guiada que combina <strong>inteligencia artificial y análisis de datos</strong> para ayudarte a encontrar lo que realmente te conviene.</li>
+					<li>Integramos información técnica, valoraciones de usuarios y comparativas entre marcas para ofrecer una visión clara y objetiva.</li>
+					<li>Queremos que puedas descubrir productos <strong>según tus prioridades</strong>: comodidad, autonomía, rendimiento o relación calidad-precio.</li>
+				</ul>
+			</article>
+			<article class="Card">
+				<h2>Fase actual del proyecto</h2>
+				<ul class="BulletList">
+					<li>En esta primera etapa nos enfocamos en dos tipos de producto: <strong>smartphones</strong> y <strong>auriculares</strong>.</li>
+					<li>Estamos validando el interés del público y recopilando feedback de nuestros primeros usuarios.</li>
+				</ul>
+			</article>
+		</div>
+	</section>
+	""", unsafe_allow_html=True)
 
 	# --- CALL TO ACTION ---
-	with st.container():
-		st.markdown("""
-		<div class='CTA'>
-			<a href='https://forms.gle/YourFormLink' target='_blank' class='CTA-button'>
-				Quiero ser tester
-			</a>
-		</div>
-		""", unsafe_allow_html=True)
+	st.markdown("""
+	<section class='CTA'>
+		<p>¿Quieres ser de los primeros en probar <strong>Pickly</strong> y ayudarnos a mejorar?</p>
+		<button class='CTA-button' onclick="window.open('https://forms.gle/YourFormLink', '_blank')">Pruébalo ahora</button>
+		<br/><br/>
+	</section>
+	""", unsafe_allow_html=True)
 
 	# --- FOOTER ---
-	with st.container():
-		st.markdown("""
-		<div class='Footer'>
-			<p>© 2025 BuscaTech · Proyecto en fase inicial · Desarrollado en Streamlit</p>
-			<p><a href='mailto:contacto@buscatech.com'>contacto@buscatech.com</a></p>
-		</div>
-		""", unsafe_allow_html=True)
+	st.markdown("""
+	<footer class='Footer'>
+		<p>© 2025 Pickly · Proyecto en fase inicial · Desarrollado con amor en Streamlit</p>
+		<p><a href='mailto:contacto@buscatech.com'>¡Hablemos! contacto@buscatech.com</a></p>
+	</footer>
+	""", unsafe_allow_html=True)
 
 if __name__ == "__main__":
 	app()
